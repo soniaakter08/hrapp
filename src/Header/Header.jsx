@@ -1,3 +1,5 @@
+
+import './Header.css';
 const Header=(props)=>{
     return(
         <header><div> <h1>{props.appName}</h1> </div>
