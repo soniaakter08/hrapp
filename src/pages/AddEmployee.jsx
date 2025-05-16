@@ -61,7 +61,7 @@ const AddEmployee = ({onAddEmployee}) =>{
                 <input type='text' placeholder='location' value={formData.location} onChange={handleChange} name='location' />
                 <input type='text' placeholder='department' value={formData.department} onChange={handleChange} name='department' />
                 <input type='text' placeholder='skills' value={formData.skills} onChange={handleChange} name='skills' />
-                <input type='text' placeholder='skills' value={formData.skills} onChange={handleChange} name='skills' />
+                
  
                 <button type='submit'>Add Employee</button>
             </form>
