@@ -12,7 +12,7 @@ const Header = ({ appName }) => {
         <nav>
           <ul className="nav-NavLinks">
             <li><NavLink to="/about">About</NavLink></li>
-            <li><NavLink to="/">Employee List</NavLink></li>
+            <li><NavLink to="/person">Employee List</NavLink></li>
             <li><NavLink to="/add">Add Employee</NavLink></li>
             
           </ul>
