@@ -6,7 +6,7 @@ const Footer=({year})=>{
     return(
         
          <footer>
-            <h4>Copyright {year}</h4>
+            <p>Copyright &copy; Sonia Akter {year}</p>
             </footer>
         
     );

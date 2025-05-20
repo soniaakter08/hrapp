@@ -5,7 +5,7 @@ import { Outlet } from "react-router";
 const Persons = () =>{
     return(
         <>
-        <Header appName='Sonia Akter'/>
+        <Header appName='HR App'/>
         <main>
         <Outlet />
         </main>

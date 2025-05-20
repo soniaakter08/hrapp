@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router";
-import axios from "axios";  // Import axios
+import axios from "axios"; 
 import './AddEmployee.css';
 
 const AddEmployee = ({ onAddEmployee }) => {
@@ -29,20 +29,20 @@ const AddEmployee = ({ onAddEmployee }) => {
 
     const newEmployee = {
       ...formData,
-      skills: formData.skills.split(',').map(skill => skill.trim())  // Split and trim skills
+      skills: formData.skills.split(',').map(skill => skill.trim())  
     };
 
-    // Use axios to post data to the server
+    
     axios
       .post("http://localhost:3002/employees", newEmployee)
       .then((response) => {
-        // After successfully adding the employee, pass the new employee to the parent
+        
         onAddEmployee(response.data);
 
-        // Redirect to the home page
+        
         navigate('/person');
 
-        // Clear the form
+        
         setFormData({
           name: '',
           title: '',
@@ -63,7 +63,7 @@ const AddEmployee = ({ onAddEmployee }) => {
 
   return (
     <>
-      <h1>Add new Employee</h1>
+      <h1>Add new employee</h1>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
@@ -85,6 +85,13 @@ const AddEmployee = ({ onAddEmployee }) => {
           value={formData.salary}
           onChange={handleChange}
           name="salary"
+        />
+         <input
+          type="number"
+          placeholder="Phone Number"
+          value={formData.phone}
+          onChange={handleChange}
+          name="phone"
         />
         <input
           type="email"
@@ -129,7 +136,7 @@ const AddEmployee = ({ onAddEmployee }) => {
           name="skills"
         />
 
-        <button type="submit">Add Employee</button>
+        <button type="submit">Add employee</button>
       </form>
     </>
   );

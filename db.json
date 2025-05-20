@@ -1,70 +1,50 @@
 {
   "employees": [
     {
-      "id": "1",
-      "name": "John Viky",
-      "title": "HR Manager",
-      "salary": 4000,
-      "phone": "040-1234562",
-      "email": "johnviky@example.com",
-      "animal": "cat",
-      "startDate": "2015-04-27",
-      "location": "Helsinki",
-      "department": "Human Resources",
-      "skills": [
-        "Recruiting",
-        "Communication",
-        "Employee Relations"
-      ]
-    },
-    {
       "id": "2",
       "name": "Mikko Laine",
       "title": "Software Developer",
-      "salary": 5500,
+      "salary": 1000,
       "phone": "041-9876543",
       "email": "mikko.laine@example.com",
-      "animal": "Dog",
+      "animal": "cat",
       "startDate": "2013-09-15",
-      "location": "Espoo",
-      "department": "IT",
+      "location": "vantaa",
+      "department": "it",
       "skills": [
         "JavaScript",
         "React",
-        "Node.js"
+        "node"
       ]
     },
     {
       "id": "3",
       "name": "Liisa Mäkelä",
       "title": "Marketing Specialist",
-      "salary": 3800,
+      "salary": 500,
       "phone": "045-1237890",
       "email": "liisa.makela@example.com",
       "animal": "Cat",
       "startDate": "2025-01-10",
-      "location": "Vantaa",
-      "department": "Marketing",
+      "location": "Espoo",
+      "department": "It",
       "skills": [
-        "SEO",
-        "Content Creation",
-        "Social Media"
+        "Social Media",
+        "React"
       ]
     },
     {
       "id": "4",
       "name": "Olli Koskinen",
       "title": "Sales Manager",
-      "salary": 4700,
+      "salary": "3000",
       "phone": "046-5678901",
       "email": "olli.koskinen@example.com",
       "animal": "Fox",
       "startDate": "2019-06-20",
-      "location": "Tampere",
-      "department": "Sales",
+      "location": "Vaasa",
+      "department": "Marketing",
       "skills": [
-        "Negotiation",
-        "CRM",
         "Customer Service"
       ]
     },
@@ -234,15 +214,15 @@
       "id": "31de",
       "name": "aaa",
       "title": "xm czm",
-      "salary": 12345,
+      "salary": 2000,
       "phone": "",
       "email": "suganya@gmail.com",
       "animal": "wedwr",
       "startDate": "12.10.2016",
-      "location": "werfw",
-      "department": "sdxvs",
+      "location": "vantaa",
+      "department": "IT",
       "skills": [
-        "wdes"
+        "Laravel"
       ]
     },
     {
@@ -261,18 +241,123 @@
       ]
     },
     {
-      "id": "5697",
-      "name": "Fizza",
-      "title": "jdhgfj",
-      "salary": 1234,
+      "id": "dbe6",
+      "name": "Arha",
+      "title": "wer",
+      "salary": "10234",
       "phone": "",
       "email": "jamesbond@gmail.com",
-      "animal": "qweq",
+      "animal": "xmc x",
       "startDate": "12.10.2016",
-      "location": "vantaa",
-      "department": "sdxvs",
+      "location": "Vantaa",
+      "department": "Marketing",
       "skills": [
-        "sdvs"
+        "erfe",
+        "werewt",
+        "eet",
+        "wetf"
+      ]
+    },
+    {
+      "id": "a1cd",
+      "name": "Arha2",
+      "title": "nskbvvbd",
+      "salary": 1234,
+      "phone": "",
+      "email": "asonia3308@gmail.com",
+      "animal": "cat",
+      "startDate": "12.10.2016",
+      "location": "Espoo",
+      "department": "IT",
+      "skills": [
+        "Recruiting",
+        "Communication",
+        "Employee Relations"
+      ]
+    },
+    {
+      "id": "24ca",
+      "name": "arha3",
+      "title": "sdfds",
+      "salary": 2000,
+      "phone": "",
+      "email": "asonia3308@gmail.com",
+      "animal": "cat",
+      "startDate": "2013-09-15",
+      "location": "Vaasa",
+      "department": "Marketing",
+      "skills": [
+        "Recruiting",
+        "Communication",
+        "Employee Relations"
+      ]
+    },
+    {
+      "id": "6466",
+      "name": "sonia akter 2",
+      "title": "ergd",
+      "salary": 2000,
+      "phone": "",
+      "email": "asonia3308@gmail.com",
+      "animal": "cat",
+      "startDate": "12.10.2016",
+      "location": "Helsinki",
+      "department": "IT",
+      "skills": [
+        "SEO",
+        "Content Creation",
+        "Social Media"
+      ]
+    },
+    {
+      "id": "c9d0",
+      "name": "Sonia Akter 3",
+      "title": "asfna ",
+      "salary": 2000,
+      "phone": "",
+      "email": "asonia3308@gmail.com",
+      "animal": "cat",
+      "startDate": "2013-09-15",
+      "location": "espoo",
+      "department": "meneging",
+      "skills": [
+        "SEO",
+        "Content Creation",
+        "Social Media"
+      ]
+    },
+    {
+      "id": "2a60",
+      "name": "Fizza 2",
+      "title": "sd",
+      "salary": 2000,
+      "phone": "01928",
+      "email": "asonia3308@gmail.com",
+      "animal": "wedwr",
+      "startDate": "2013-09-15",
+      "location": "Vaasa",
+      "department": "testing",
+      "skills": [
+        "SEO",
+        "Content Creation",
+        "Social Media"
+      ]
+    },
+    {
+      "id": "2a60",
+      "name": "Fizza 2",
+      "title": "sd",
+      "salary": 2000,
+      "phone": "01928",
+      "email": "asonia3308@gmail.com",
+      "animal": "wedwr",
+      "startDate": "2013-09-15",
+      "location": "Vaasa",
+      "department": "testing",
+      "skills": [
+        "SEO",
+        "Content Creation",
+        "Social Media"
       ]
     }
   ]

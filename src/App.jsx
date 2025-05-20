@@ -1,59 +1,61 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import PersonList from './Employees/PersonList';
 import './App.css';
-import { createBrowserRouter , RouterProvider} from 'react-router';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Root from './pages/Root';
-import About from './pages/About';
-import AddEmployee from './pages/AddEmployee';
+import About from './pages/About/About';
+import AddEmployee from './pages/AddEmployee/AddEmployee';
 import axios from 'axios';
- 
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
 function App() {
   const [employeeData, setEmployeeData] = useState([]);
- 
-  useEffect (() =>{
+
+  useEffect(() => {
     axios.get('http://localhost:3002/employees')
-    .then((res) =>{
-      console.log(res);
-      setEmployeeData(res.data)})
-    .catch((err) =>
-        console.log('Failed to fetch data', err));
-  }, [])
- 
-  // const addEmployeeHandler = (newEmployee) =>{
-  //   const updatedEmployee = [...employeeData, {...newEmployee} ];
-  //   setEmployeeData(updatedEmployee);
-  //   console.log(updatedEmployee);
-  // }
+      .then((res) => setEmployeeData(res.data))
+      .catch((err) => console.error('Failed to fetch data', err));
+  }, []);
 
   const addEmployeeHandler = (newEmployee) => {
-    axios
-      .post('http://localhost:3002/employees', newEmployee) // Send new employee data to the server
-      .then((response) => {
-        setEmployees((prevEmployees) => [...prevEmployees, response.data]); // Update the state with the new employee
-      })
-      .catch((error) => {
-        console.error("Error adding employee:", error);
-      });
+    axios.post('http://localhost:3002/employees', newEmployee)
+      .then((res) => setEmployeeData((prev) => [...prev, res.data]))
+      .catch((err) => console.error('Error adding employee:', err));
   };
- 
-  const router = createBrowserRouter([
-    { path: '/' ,
-      element:<Root />,
-      children:[
-        {path: '/add' , element:<AddEmployee onAddEmployee={addEmployeeHandler}/>},
-        {path: '/about' , element:<About />},
-        {path: '/person' , element:<PersonList employeeData={employeeData} setEmployeeData = {setEmployeeData} />}
-      ]},
-    
-  ]);
- 
-  return (
-    <>
-    <main>
-        <RouterProvider router={router} />
-      </main>
-   </>
-  )
+
+  const updateEmployeeHandler = async (id, updatedFields) => {
+    const employee = employeeData.find(emp => emp.id === id);
+    if (!employee) return;
+
+    const updatedEmployee = { ...employee, ...updatedFields };
+
+    try {
+      const response = await axios.patch(`http://localhost:3002/employees/${id}`, updatedEmployee);
+      const updated = response.data;
+
+  
+      setEmployeeData((prev) =>
+        prev.map((emp) => (emp.id === updated.id ? updated : emp))
+      );
+    } catch (err) {
+      console.error('Failed to update employee:', err);
+    }
+  };
+
+return (
+  <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<Root />}>
+          <Route index element={<About />} />
+          <Route path="/person"
+               element = { <PersonList employeeData={employeeData} onUpdateEmployee={updateEmployeeHandler} />  }              
+            />
+          <Route path="/add" element={<AddEmployee onAddEmployee={addEmployeeHandler} />} />
+        
+      </Route>
+    </Routes>
+  </BrowserRouter>
+)
 }
- 
+
 export default App;

@@ -1,6 +1,8 @@
-import './Employees.css';
+import React, { useState, useEffect } from 'react';
+import './PersonCard.css';
 
 const PersonCard = ({
+  id,
   name,
   title,
   salary,
@@ -11,65 +13,92 @@ const PersonCard = ({
   location,
   department,
   skills = [],
+  onUpdate,
 }) => {
-  const calculateExperience = () => {
-    const start = new Date(startDate);
-    const now = new Date();
+  const [isEditing, setIsEditing] = useState(false);
 
-    const totalMonths =
-      (now.getFullYear() - start.getFullYear()) * 12 +
-      (now.getMonth() - start.getMonth());
-    const years = Math.floor(totalMonths / 12);
-    const months = totalMonths % 12;
+  const [formState, setFormState] = useState({
+    salary: salary.toString(),
+    location,
+    department,
+    skills: Array.isArray(skills) ? skills.join(', ') : skills,
+  });
 
-    return { years, months };
+  useEffect(() => {
+    setFormState({
+      salary: salary.toString(),
+      location,
+      department,
+      skills: Array.isArray(skills) ? skills.join(', ') : skills,
+    });
+  }, [salary, location, department, skills]);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormState((prev) => ({ ...prev, [name]: value }));
   };
 
-  const { years, months } = calculateExperience();
-
-  const reminder =
-    [5, 10, 15].includes(years) && months === 0
-      ? '🎉 Schedule recognition meeting.'
-      : years === 0 && months < 6
-      ? '🔔 Schedule probation review.'
-      : '';
-
-  const addAnimalEmoji = (animalName) => {
-    const emojiMap = {
-      rabbit: '🐇',
-      tiger: '🐅',
-      dog: '🐕',
-      cat: '🐈',
-      fox: '🦊',
-      panda: '🐼',
-      'polar bear': '🐻‍❄️',
-      seal: '🦭',
-      owl: '🦉',
-      lion: '🦁',
-      bear: '🐻',
+  const handleSave = async () => {
+    const updated = {
+      salary: Number(formState.salary),
+      location: formState.location,
+      department: formState.department,
+      skills: formState.skills.split(',').map((s) => s.trim()),
     };
-    return emojiMap[animalName?.toLowerCase()] || '';
+
+    await onUpdate(id, updated);
+    setIsEditing(false);
   };
- 
-    return(
-       
-        <div className="card">
-            <h3>{name}  {addAnimalEmoji(animal)}</h3>
-            {/* <p><strong></strong> {name}</p> */}
-            <p>{title}</p>
-            <p>{salary} €</p>
-            <p>{phone}</p>
-            <p>{email}</p>
-            {/* <p><strong></strong>  {addAnimalEmoji(animal)}</p> */}
-            <p>{location}</p>
-            <p>{department}</p>
-            <p>{skills}</p>
-            <p>{years} Years and {months} Months</p>
-            <strong><p style={{ color: "rgb(171, 16, 16)" }}>{reminder}</p></strong>
-                  
-        </div>
-      
-    )
-}
- 
+
+  const handleCancel = () => {
+    setFormState({
+      salary: salary.toString(),
+      location,
+      department,
+      skills: Array.isArray(skills) ? skills.join(', ') : skills,
+    });
+    setIsEditing(false);
+  };
+
+  return (
+    <div className="person-card">
+      {isEditing ? (
+        <>
+          {Object.entries(formState).map(([key, value]) => (
+            <div key={key} className="field">
+              <strong>{key.charAt(0).toUpperCase() + key.slice(1)}:</strong>
+              <input
+                type="text"
+                name={key}
+                value={value}
+                onChange={handleChange}
+              />
+            </div>
+          ))}
+          <div className="buttons">
+            <button className="save" onClick={handleSave}>Save</button>
+            <button className="cancel" onClick={handleCancel}>Cancel</button>
+          </div>
+        </>
+      ) : (
+        <>
+          <h3>{name}</h3>
+          <p><strong>Title:</strong> {title}</p>
+          <p><strong>Salary:</strong> {salary}</p>
+          <p><strong>Phone:</strong> {phone}</p>
+          <p><strong>Email:</strong> {email}</p>
+          <p><strong>Animal:</strong> {animal}</p>
+          <p><strong>Start Date:</strong> {startDate}</p>
+          <p><strong>Location:</strong> {location}</p>
+          <p><strong>Department:</strong> {department}</p>
+          <p><strong>Skills:</strong> {Array.isArray(skills) ? skills.join(', ') : skills}</p>
+          <div className="button">
+          <button onClick={() => setIsEditing(true)}>Edit</button>
+          </div>
+        </>
+      )}
+    </div>
+  );
+};
+
 export default PersonCard;
