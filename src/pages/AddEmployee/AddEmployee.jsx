@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { useNavigate } from "react-router";
 import axios from "axios"; 
-import './AddEmployee.css';
+// import useAxios from "../../hooks/useAxios";
+import styles from './AddEmployee.module.css';
 
 const AddEmployee = ({ onAddEmployee }) => {
   const [formData, setFormData] = useState({
@@ -32,17 +33,11 @@ const AddEmployee = ({ onAddEmployee }) => {
       skills: formData.skills.split(',').map(skill => skill.trim())  
     };
 
-    
     axios
       .post("http://localhost:3002/employees", newEmployee)
       .then((response) => {
-        
         onAddEmployee(response.data);
-
-        
         navigate('/person');
-
-        
         setFormData({
           name: '',
           title: '',
@@ -63,14 +58,15 @@ const AddEmployee = ({ onAddEmployee }) => {
 
   return (
     <>
-      <h1>Add new employee</h1>
-      <form onSubmit={handleSubmit}>
+      <h1 className={styles.title}>Add New Employee</h1>
+      <form onSubmit={handleSubmit} className={styles.form}>
         <input
           type="text"
           placeholder="Name"
           value={formData.name}
           onChange={handleChange}
           name="name"
+          className={styles.input}
         />
         <input
           type="text"
@@ -78,6 +74,7 @@ const AddEmployee = ({ onAddEmployee }) => {
           value={formData.title}
           onChange={handleChange}
           name="title"
+          className={styles.input}
         />
         <input
           type="number"
@@ -85,13 +82,15 @@ const AddEmployee = ({ onAddEmployee }) => {
           value={formData.salary}
           onChange={handleChange}
           name="salary"
+          className={styles.input}
         />
-         <input
+        <input
           type="number"
           placeholder="Phone Number"
           value={formData.phone}
           onChange={handleChange}
           name="phone"
+          className={styles.input}
         />
         <input
           type="email"
@@ -99,6 +98,7 @@ const AddEmployee = ({ onAddEmployee }) => {
           value={formData.email}
           onChange={handleChange}
           name="email"
+          className={styles.input}
         />
         <input
           type="text"
@@ -106,6 +106,7 @@ const AddEmployee = ({ onAddEmployee }) => {
           value={formData.animal}
           onChange={handleChange}
           name="animal"
+          className={styles.input}
         />
         <input
           type="text"
@@ -113,6 +114,7 @@ const AddEmployee = ({ onAddEmployee }) => {
           value={formData.startDate}
           onChange={handleChange}
           name="startDate"
+          className={styles.input}
         />
         <input
           type="text"
@@ -120,6 +122,7 @@ const AddEmployee = ({ onAddEmployee }) => {
           value={formData.location}
           onChange={handleChange}
           name="location"
+          className={styles.input}
         />
         <input
           type="text"
@@ -127,6 +130,7 @@ const AddEmployee = ({ onAddEmployee }) => {
           value={formData.department}
           onChange={handleChange}
           name="department"
+          className={styles.input}
         />
         <input
           type="text"
@@ -134,9 +138,12 @@ const AddEmployee = ({ onAddEmployee }) => {
           value={formData.skills}
           onChange={handleChange}
           name="skills"
+          className={styles.input}
         />
 
-        <button type="submit">Add employee</button>
+        <button type="submit" className={styles.submitButton}>
+          Add Employee
+        </button>
       </form>
     </>
   );

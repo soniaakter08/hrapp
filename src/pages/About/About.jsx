@@ -1,14 +1,14 @@
 import Header from "../../Header/Header";
 import Footer from "../../Footer/Footer";
-import "./About.css";
+import styles from "./About.module.css";
 
 const About = () => {
   return (
     <>
       
-      <main className="about-container">
-        <section className="hero">
-          <h1>Welcome to the HR App</h1>
+      <main className={styles.aboutContainer}>
+        <section>
+          <h1 className={styles.header}>Welcome to the HR App</h1>
           <p>
             This simple yet powerful tool helps manage employee data with ease.
             Whether you're a small team or a growing organization, this app
@@ -16,7 +16,7 @@ const About = () => {
           </p>
         </section>
 
-        <section className="features">
+        <section>
           <h2>What You Can Do</h2>
           <ul>
             <li> View employee details including contact, role, and salary</li>
@@ -27,7 +27,7 @@ const About = () => {
           </ul>
         </section>
 
-        <section className="getting-started">
+        <section>
           <h2>Getting Started</h2>
           <p>
             Navigate to <strong>Employees</strong> to see all current team

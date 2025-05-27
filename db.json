@@ -4,24 +4,25 @@
       "id": "2",
       "name": "Mikko Laine",
       "title": "Software Developer",
-      "salary": 1000,
+      "salary": 4000,
       "phone": "041-9876543",
       "email": "mikko.laine@example.com",
       "animal": "cat",
       "startDate": "2013-09-15",
-      "location": "vantaa",
-      "department": "it",
+      "location": "Vantaa",
+      "department": "Networking",
       "skills": [
         "JavaScript",
         "React",
-        "node"
+        "Node",
+        "Laravel"
       ]
     },
     {
       "id": "3",
       "name": "Liisa Mäkelä",
       "title": "Marketing Specialist",
-      "salary": 500,
+      "salary": 5000,
       "phone": "045-1237890",
       "email": "liisa.makela@example.com",
       "animal": "Cat",
@@ -37,7 +38,7 @@
       "id": "4",
       "name": "Olli Koskinen",
       "title": "Sales Manager",
-      "salary": "3000",
+      "salary": 3000,
       "phone": "046-5678901",
       "email": "olli.koskinen@example.com",
       "animal": "Fox",
@@ -174,10 +175,10 @@
       "email": "jamesbond@gmail.com",
       "animal": "sncz",
       "startDate": "12.10.2016",
-      "location": "s,dcbs",
-      "department": "mbcs",
+      "location": "Vantaa",
+      "department": "IT",
       "skills": [
-        "ds"
+        "React"
       ]
     },
     {
@@ -293,16 +294,16 @@
       ]
     },
     {
-      "id": "6466",
-      "name": "sonia akter 2",
-      "title": "ergd",
-      "salary": 2000,
-      "phone": "",
-      "email": "asonia3308@gmail.com",
+      "id": "048b",
+      "name": "Test",
+      "title": "Designer",
+      "salary": 3000,
+      "phone": "123456789",
+      "email": "jamesbond@gmail.com",
       "animal": "cat",
-      "startDate": "12.10.2016",
+      "startDate": "2015-04-27",
       "location": "Helsinki",
-      "department": "IT",
+      "department": "testing",
       "skills": [
         "SEO",
         "Content Creation",
@@ -310,53 +311,64 @@
       ]
     },
     {
-      "id": "c9d0",
-      "name": "Sonia Akter 3",
-      "title": "asfna ",
+      "id": "fe7a",
+      "name": "Test_02",
+      "title": "Tester",
       "salary": 2000,
-      "phone": "",
-      "email": "asonia3308@gmail.com",
+      "phone": "12345678",
+      "email": "ashik@gmail.com",
+      "animal": "Dog",
+      "startDate": "2025-01-10",
+      "location": "Vaasa",
+      "department": "meneging",
+      "skills": [
+        "Social Media"
+      ]
+    },
+    {
+      "id": "4080",
+      "name": "Test_03",
+      "title": "Maneger",
+      "salary": 2000,
+      "phone": "345566",
+      "email": "mikko.laine@example.com",
       "animal": "cat",
-      "startDate": "2013-09-15",
+      "startDate": "2025-01-10",
       "location": "espoo",
       "department": "meneging",
       "skills": [
-        "SEO",
-        "Content Creation",
+        "Recruiting",
+        "Communication",
+        "Employee Relations"
+      ]
+    },
+    {
+      "id": "5ab5",
+      "name": "Fizza",
+      "title": "Designer",
+      "salary": 2000,
+      "phone": "",
+      "email": "asonia3308@gmail.com",
+      "animal": "cat",
+      "startDate": "12.10.2010",
+      "location": "espoo",
+      "department": "Networking",
+      "skills": [
         "Social Media"
       ]
     },
     {
-      "id": "2a60",
-      "name": "Fizza 2",
-      "title": "sd",
+      "id": "5ab5",
+      "name": "Fizza",
+      "title": "Designer",
       "salary": 2000,
-      "phone": "01928",
+      "phone": "",
       "email": "asonia3308@gmail.com",
-      "animal": "wedwr",
-      "startDate": "2013-09-15",
-      "location": "Vaasa",
-      "department": "testing",
+      "animal": "cat",
+      "startDate": "12.10.2010",
+      "location": "espoo",
+      "department": "Networking",
       "skills": [
-        "SEO",
-        "Content Creation",
-        "Social Media"
-      ]
-    },
-    {
-      "id": "2a60",
-      "name": "Fizza 2",
-      "title": "sd",
-      "salary": 2000,
-      "phone": "01928",
-      "email": "asonia3308@gmail.com",
-      "animal": "wedwr",
-      "startDate": "2013-09-15",
-      "location": "Vaasa",
-      "department": "testing",
-      "skills": [
-        "SEO",
-        "Content Creation",
         "Social Media"
       ]
     }

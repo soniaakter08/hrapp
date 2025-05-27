@@ -1,10 +1,11 @@
 import React from 'react';
-import PersonCard from './PersonCard';
+import PersonCard from '../PersonCard/PersonCard';
+import styles from './Personlist.module.css';
 
 const PersonList = ({ employeeData, onUpdateEmployee }) => {
   return (
     <>
-      <h1>Employee Details</h1>
+      <h1 className={styles.heading }>Employee Details</h1>
       <div className="employeeList">
         {employeeData.length > 0 ? (
           employeeData.map((employee) => (

@@ -1,14 +1,11 @@
+import styles from './Footer.module.css';
 
-import './Footer.css'
-const Footer=({year})=>{
-    
-
-    return(
-        
-         <footer>
-            <p>Copyright &copy; Sonia Akter {year}</p>
-            </footer>
-        
-    );
+const Footer = ({ year }) => {
+  return (
+    <footer className={styles.footer}>
+      <p>Copyright &copy; Sonia Akter {year}</p>
+    </footer>
+  );
 };
+
 export default Footer;
