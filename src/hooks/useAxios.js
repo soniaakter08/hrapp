@@ -1,22 +1,26 @@
+// src/hooks/useAxios.js
 import axios from "axios";
-// import { useEffect, useState } from 'react';
+
+const BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:3002";
 
 const useAxios = () => {
-  const get = async (url) => {
+  const get = async (endpoint) => {
     try {
-      const response = await axios.get(url);
+      const response = await axios.get(`${BASE_URL}/${endpoint}`);
       return response.data;
-    } catch (err) {
-      console.log("Failed to fetch data", err);
+    } catch (error) {
+      console.error("GET error:", error);
+      return null;
     }
   };
 
-  const post = async (url, data) => {
+  const post = async (endpoint, data) => {
     try {
-      const response = await axios.post(url, data);
+      const response = await axios.post(`${BASE_URL}/${endpoint}`, data);
       return response.data;
-    } catch (err) {
-      console.log("Failed to create data", err);
+    } catch (error) {
+      console.error("POST error:", error);
+      return null;
     }
   };
 
@@ -29,12 +33,13 @@ const useAxios = () => {
     }
   };
 
-  const remove = async (url, data) => {
+  const remove = async (endpoint) => {
     try {
-      const response = await axios.delete(url, data);
+      const response = await axios.delete(`${BASE_URL}/${endpoint}`);
       return response.data;
-    } catch (err) {
-      console.log("Failed to delete data", err);
+    } catch (error) {
+      console.error("DELETE error:", error);
+      return null;
     }
   };
 
