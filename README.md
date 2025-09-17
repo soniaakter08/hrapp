@@ -1,6 +1,6 @@
 # HR App
 
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=soniaakter08_hrapp&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=soniaakter08_hrapp)
+[![Quality gate](https://sonarcloud.io/api/project_badges/quality_gate?project=soniaakter08_hrapp)](https://sonarcloud.io/summary/new_code?id=soniaakter08_hrapp)
 
 ## 📋 Project Overview
 
