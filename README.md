@@ -1,12 +1,33 @@
-# React + Vite
+# HR App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=soniaakter08_hrapp&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=soniaakter08_hrapp)
 
-Currently, two official plugins are available:
+## 📋 Project Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This is the HR App project, designed to manage and streamline human resource tasks such as employee management, attendance tracking, and leave management.
 
-## Expanding the ESLint configuration
+## ⚙️ Features
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Employee registration and management
+- Attendance tracking
+- Leave request and approval
+- Admin dashboard
+
+## 🧪 Code Quality
+
+This project is continuously analyzed using **SonarCloud** to ensure:
+
+- High code quality
+- Fewer bugs and vulnerabilities
+- Maintainable and reliable code
+
+Check the full analysis report here:  
+🔗 [View on SonarCloud](https://sonarcloud.io/summary/new_code?id=soniaakter08_hrapp)
+
+## 🚀 Getting Started
+
+1. Clone the repository
+   ```bash
+   git clone https://github.com/soniaakter08/hrapp.git
+   cd hrapp
+   ```
